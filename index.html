@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CBSE Study Hub - Free study tools, calculators, quizzes and productivity tools for Class 10 students."
+    >
+
+    <title>CBSE Study Hub | Free Study Tools</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            📚 CBSE Study Hub
+        </div>
+
+        <nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#tools">Tools</a>
+
+    <a href="#quiz">Quiz</a>
+
+    <a href="maths.html">Maths</a>
+
+</nav>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="badge">
+                FREE • CLASS 10 • CBSE
+            </p>
+
+            <h1>
+                Study smarter.<br>
+                Score better. 🚀
+            </h1>
+
+            <p class="hero-text">
+
+                Free calculators, study timers,
+                quizzes and productivity tools
+                made for CBSE Class 10 students.
+
+            </p>
+
+            <a href="#tools" class="hero-button">
+                Explore Tools →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section id="tools" class="section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                STUDY TOOLS
+            </p>
+
+            <h2>
+                Everything you need
+            </h2>
+
+            <p>
+                Simple tools to make studying easier.
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+
+            <!-- Percentage -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Percentage Calculator
+                </h3>
+
+                <p>
+                    Calculate your marks percentage instantly.
+                </p>
+
+                <button onclick="openPercentageCalculator()">
+                    Open Tool
+                </button>
+
+            </div>
+
+
+            <!-- Marks -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🧮
+                </div>
+
+                <h3>
+                    Marks Calculator
+                </h3>
+
+                <p>
+                    Add your subject marks and calculate your total.
+                </p>
+
+                <button onclick="openMarksCalculator()">
+                    Open Tool
+                </button>
+
+            </div>
+
+
+            <!-- Timer -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    ⏱️
+                </div>
+
+                <h3>
+                    Pomodoro Timer
+                </h3>
+
+                <p>
+                    Focus for 25 minutes without distractions.
+                </p>
+
+                <button onclick="openTimer()">
+                    Open Tool
+                </button>
+
+            </div>
+
+
+            <!-- Quiz -->
+
+            <div
+                class="tool-card"
+                id="quiz"
+            >
+
+                <div class="tool-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Maths Quiz
+                </h3>
+
+                <p>
+                    Test your Class 10 Maths knowledge.
+                </p>
+
+                <button onclick="startQuiz()">
+                    Start Quiz
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- SUBJECTS -->
+
+    <section
+        id="subjects"
+        class="subjects-section"
+    >
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                SUBJECTS
+            </p>
+
+            <h2>
+                Class 10 CBSE
+            </h2>
+
+            <p>
+                More subject-wise tools coming soon.
+            </p>
+
+        </div>
+
+
+       <div class="subject-grid">
+
+    <a href="maths.html" class="subject-card">
+
+        📐
+
+        <h3>
+            Mathematics
+        </h3>
+
+        <p>
+            Class 10 Maths
+        </p>
+
+    </a>
+
+
+    <a href="science.html" class="subject-card">
+
+        🔬
+
+        <h3>
+            Science
+        </h3>
+
+        <p>
+            Class 10 Science
+        </p>
+
+    </a>
+
+
+    <a href="sst.html" class="subject-card">
+
+        🌍
+
+        <h3>
+            Social Science
+        </h3>
+
+        <p>
+            History • Geography • Civics • Economics
+        </p>
+
+    </a>
+
+
+    <a href="english.html" class="subject-card">
+
+        📖
+
+        <h3>
+            English
+        </h3>
+
+        <p>
+            Class 10 English
+        </p>
+
+    </a>
+
+
+    <a href="hindi.html" class="subject-card">
+
+        🇮🇳
+
+        <h3>
+            Hindi
+        </h3>
+
+        <p>
+            Class 10 Hindi
+        </p>
+
+    </a>
+
+</div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>
+            📚 CBSE Study Hub
+        </h3>
+
+        <p>
+            Free study tools for students.
+        </p>
+
+        <p class="copyright">
+            © 2026 CBSE Study Hub
+        </p>
+
+    </footer>
+
+
+    <!-- MODAL -->
+
+    <div
+        id="modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-box">
+
+            <button
+                class="close-button"
+                onclick="closeModal()"
+            >
+                ✕
+            </button>
+
+            <div id="modal-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
