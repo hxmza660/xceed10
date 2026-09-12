@@ -1,0 +1,10 @@
+function savePlan(){localStorage.setItem('xceed10_goal',document.getElementById('goal').value);localStorage.setItem('xceed10_hours',document.getElementById('hours').value);document.getElementById('planStatus').textContent='Plan saved for this browser ✅'}
+(function(){const g=localStorage.getItem('xceed10_goal'),h=localStorage.getItem('xceed10_hours');if(g)document.getElementById('goal').value=g;if(h)document.getElementById('hours').value=h;})();
+function resetChecks(){document.querySelectorAll('.study-check').forEach(x=>x.checked=false)}
+let selfTimer=null,selfSeconds=1500;function drawSelfTimer(){document.getElementById('selfTimer').textContent=String(Math.floor(selfSeconds/60)).padStart(2,'0')+':'+String(selfSeconds%60).padStart(2,'0')}
+function startSelfTimer(){if(selfTimer)return;selfTimer=setInterval(()=>{selfSeconds--;drawSelfTimer();if(selfSeconds<=0){clearInterval(selfTimer);selfTimer=null;alert('🎉 Focus session complete! Take a short break.');selfSeconds=1500;drawSelfTimer()}},1000)}
+function pauseSelfTimer(){clearInterval(selfTimer);selfTimer=null}function resetSelfTimer(){pauseSelfTimer();selfSeconds=1500;drawSelfTimer()}
+function saveRevision(){const done=[...document.querySelectorAll('.rev-check')].filter(x=>x.checked).length;document.getElementById('revStatus').textContent=`${done}/5 subject areas marked revised ✅`}
+function saveMistake(){const v=document.getElementById('mistake').value.trim();if(!v)return;localStorage.setItem('xceed10_mistake',v);document.getElementById('mistakeStatus').textContent='Mistake saved ✅'}
+function calcExamDays(){const v=document.getElementById('examDate').value;if(!v)return;const d=new Date(v+'T23:59:59');const now=new Date();const days=Math.ceil((d-now)/(1000*60*60*24));document.getElementById('examResult').textContent=days>=0?`${days} day(s) left. Plan backward from the exam date 📅`:'That date has passed — choose a future exam date.'}
+function saveDoubt(){const v=document.getElementById('doubt').value.trim();if(!v)return;localStorage.setItem('xceed10_doubt',v);document.getElementById('doubtStatus').textContent='Doubt saved ✅'}
